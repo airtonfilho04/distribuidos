@@ -7,6 +7,10 @@ def main():
     soc.bind((host, port))
 
     while(True):
-        print('oi')
+        msg, addrCliente = soc.recvfrom(2048)
+        msg = msg.decode()
+        print(msg, addrCliente)
 
+if __name__ == '__main__':
+    main()
 
